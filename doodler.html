@@ -11,57 +11,146 @@
     <script src="doodler.js"></script>
 </head>
 <body>
-
+    <div class="doodle-div">
     <css-doodle id="doodle">
         :doodle{
             @grid: 20x20;
             @size: 50vmax;
-            background:black;
         }
         --hue: calc( 100 + 1 * @row() * @col());
         background-color: hsla(var(--hue), 50%, 70%, @rand(0, 90%));
 
     </css-doodle>
+    </div>
 
     <div class="controls">
-
 
         <button onclick="refresh_doodle()">Refresh!</button>
 
 
-        <div class="group">
-            <span class="title">Main BG:</span>
-
-            <div class="bg">
-                hue: <br />
-                1<input id="doodle_h" type="range" min="1" max="360">360
-            </div>
-            <div class="bg">
-                saturation: <br />
-                1<input id="doodle_s" type="range" min="1" max="100">100
-            </div>
-            <div class="bg">
-                lightness: <br />
-                1<input id="doodle_l" type="range" min="1" max="100">100
-            </div>
-
-        </div>
+        <div class="family">
+            <span class="title family-title">Grid:</span>
 
 
-
-        <div class="group">
-            <span class="title">Grid:</span>
-        
-            <div class="bg">
-                X:<br />
-                1<input id="gridx" type="range" min="1" max="32">32
-            </div>
+            <div class="group half">
+                
+                <span class="title">Number Of Cells:</span>
             
-            <div class="bg">
-                Y:<br />
-                1<input id="gridy" type="range" min="1" max="32">32
+                <div class="bg">
+                <span class="label">X:</span>    1<input id="gridx" type="range" min="1" max="32">32
+                </div>
+                
+                <div class="bg">
+                <span class="label">Y:</span>    1<input id="gridy" type="range" min="1" max="32">32
+                </div>
+
             </div>
-        </div>
+
+
+            <!-- <div class="group half">
+                <span class="title">Other Options:</span>
+
+                <div class="bg">
+                    <span class="label">something:</span>    1<input id="gridx" type="range" min="1" max="32">32
+                </div> -->
+
+
+
+            </div>
+
+        </div>  <!-- /family -->
+
+
+        <div class="family">
+            <span class="title family-title">Doodle:</span>
+            <div class="group">
+                <span class="title">Main BG (in hsl):</span>
+
+                <div class="bg">
+                <span class="label">H:</span>    1<input id="doodle_h" type="range" min="1" max="360">360
+                </div>
+                <div class="bg">
+                <span class="label">S:</span>    1<input id="doodle_s" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                <span class="label">L:</span>    1<input id="doodle_l" type="range" min="1" max="100">100
+                </div>
+
+                <div class="group half">
+                    <span class="title">Other Options:</span>
+    
+
+
+                    <div class="bg">
+                        <!-- doodle options -->
+                        <span class="label">border-radius:</span>    <input id="doodle_radius_check" type="checkbox">
+                        1<input id="doodle_radius" type="range" min="1" max="100">100
+                        
+                    </div>
+
+                    <div class="bg">
+                        <!-- doodle options -->
+                        <span class="label">border-width:</span>    <input id="doodle_border_width_check" type="checkbox">
+                        1<input id="doodle_border_width" type="range" min="1" max="20">20
+                        
+                    </div>
+
+                    <div class="bg">
+                        <!-- doodle options -->
+                        <span class="label">border-style:</span>    <input id="doodle_border_style_check" type="checkbox">
+                        <select id="doodle_border_style">
+                            <option value="dashed">dashed</option>
+                            <option value="solid">solid</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select>
+
+                    </div>
+    
+    
+    
+                </div>
+
+            
+
+            </div>
+        </div> <!-- /family -->
+
+        <div class="family">
+            <span class="title family-title">Cells:</span>
+            <div class="group">
+                <span class="title">Cell BG (in hsl):</span>
+
+                <div class="bg">
+                <span class="label">H:</span>    1<input id="cell_h" type="range" min="1" max="360">360
+                </div>
+                <div class="bg">
+                <span class="label">S:</span>    1<input id="cell_s" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                <span class="label">L:</span>    1<input id="cell_l" type="range" min="1" max="100">100
+                </div>
+
+                <div class="group half">
+                    <span class="title">Other Options:</span>
+    
+                    <div class="bg">
+                        <span class="label">center:</span>    <input id="cell_center" type="checkbox">
+                    </div>
+
+                    <div class="bg">
+                        <span class="label">border-radius:</span>    <input id="cell_radius_check" type="checkbox">
+                        1<input id="cell_radius" type="range" min="1" max="100">100
+
+                    </div>
+    
+    
+    
+                </div>
+
+            </div>
+        </div> <!-- /family -->
+
         
 
 
