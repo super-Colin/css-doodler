@@ -7,11 +7,64 @@
     <title>CSS Doodler</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="node_modules/css-doodle/css-doodle.min.js"></script>
     <script src="doodler.js"></script>
 </head>
 <body>
 
-    <div>
+    <css-doodle id="doodle">
+        :doodle{
+            @grid: 20x20;
+            @size: 50vmax;
+            background:black;
+        }
+        --hue: calc( 100 + 1 * @row() * @col());
+        background-color: hsla(var(--hue), 50%, 70%, @rand(0, 90%));
+
+    </css-doodle>
+
+    <div class="controls">
+
+
+        <button onclick="refresh_doodle()">Refresh!</button>
+
+
+        <div class="group">
+            <span class="title">Main BG:</span>
+
+            <div class="bg">
+                hue: <br />
+                1<input id="doodle_h" type="range" min="1" max="360">360
+            </div>
+            <div class="bg">
+                saturation: <br />
+                1<input id="doodle_s" type="range" min="1" max="100">100
+            </div>
+            <div class="bg">
+                lightness: <br />
+                1<input id="doodle_l" type="range" min="1" max="100">100
+            </div>
+
+        </div>
+
+
+
+        <div class="group">
+            <span class="title">Grid:</span>
+        
+            <div class="bg">
+                X:<br />
+                1<input id="gridx" type="range" min="1" max="32">32
+            </div>
+            
+            <div class="bg">
+                Y:<br />
+                1<input id="gridy" type="range" min="1" max="32">32
+            </div>
+        </div>
+        
+
+
 
     </div>
     

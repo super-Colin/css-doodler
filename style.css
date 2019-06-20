@@ -1,0 +1,27 @@
+.title{
+    display:block;
+    width:100%;
+    text-align:center;
+}
+.group{
+    /* max-width:50%; */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.bg{
+    background-color:#eee;
+    margin-bottom:10px;
+    width:100%;
+}
+input[type="range"]{
+    width:75%;
+}
+button[onclick="refresh_doodle()"]{
+    /* float:right; */
+    margin: .5rem 2.5%;
+    padding: 1rem 0;
+    width:95%;
+    /* height:20rem; */
+}
