@@ -1,3 +1,5 @@
+let doodle_input = '';
+
 function refresh_doodle() {
     let doodle = document.getElementById('doodle');
 
@@ -48,12 +50,12 @@ function refresh_doodle() {
         doodle_border_width = 'border-width: ' + width + 'px;';
     }
 
-
-
-
     // end doodle border stuff
 
+
     // ============================
+
+
     // cell border stuff
 
     let cell_radius_check = document.getElementById('cell_radius_check').checked;
@@ -64,23 +66,20 @@ function refresh_doodle() {
     }
 
 
-    let cell_border_style_check = document.getElementById('cell_border_style_check').checked;
     let cell_border_style = "";
-    if (cell_border_style_check === true) {
+    let cell_border_width = "";
+    let cell_border_check = document.getElementById('cell_border_check').checked;
+    if (cell_border_check === true) {
+
         let e = document.getElementById("cell_border_style");
         cell_border_style = e.options[e.selectedIndex].text;
         cell_border_style = 'border-style:' + cell_border_style + ';';
         console.log('worked');
-    }
 
-
-    let cell_border_width_check = document.getElementById('cell_border_width_check').checked;
-    let cell_border_width = "";
-    if (cell_border_width_check === true) {
         let width = document.getElementById('cell_border_width').value;
         cell_border_width = 'border-width: ' + width + 'px;';
 
-        // This is where the @index is checked for
+        // This is where the @index is checked for and added
         let cell_border_index_check = document.getElementById('cell_border_index_check').checked;
         if (cell_border_index_check === true) {
             cell_border_width = 'border-width: calc(@i() * ' + width + 'px);'
@@ -89,11 +88,6 @@ function refresh_doodle() {
     }
 
 
-    // let cell_border_index_check = document.getElementById('cell_border_index_check').checked;
-    // if(cell_border_index_check === true){
-    //     cell_border_width = 'calc(@i() * '+ width +');'
-    // }
-
     // end cell border stuff
 
     // ==================
@@ -101,10 +95,7 @@ function refresh_doodle() {
 
 
 
-
-
-
-    let doodle_input = `
+    doodle_input = `
         :doodle{
             @grid: ` + gridx + `x` + gridy + `;
             @size: 50vmax;
@@ -131,3 +122,9 @@ function refresh_doodle() {
 
     doodle.update(doodle_input);
 }
+
+function print_me() {
+    let div = document.getElementById('print_me');
+    div.innerHTML = doodle_input;
+}
+

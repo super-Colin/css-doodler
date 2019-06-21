@@ -121,6 +121,7 @@
         </div>
     </div> <!-- / doodle family -->
 
+
     <div class="family">
         <span class="title family-title">Cells:</span>
         <div class="group">
@@ -143,7 +144,6 @@
                     <span class="label">center:</span> <input id="cell_center" type="checkbox">
                 </div>
 
-                <!-- ====================== -->
 
                 <!-- cell border stuff -->
 
@@ -155,8 +155,13 @@
                 </div>
 
                 <div class="bg">
+                    <span class="label">border:</span> <input id="cell_border_check" type="checkbox">
+                </div>
+
+                <div class="bg">
                     <!-- cell options -->
-                    <span class="label">border-style:</span> <input id="cell_border_style_check" type="checkbox">
+                    <span class="label">border-style:</span> 
+                    <!-- <input id="cell_border_style_check" type="checkbox"> -->
                     <select id="cell_border_style">
                         <option value="solid">solid</option>
                         <option value="dashed">dashed</option>
@@ -168,8 +173,9 @@
 
                 <div class="bg">
                     <!-- cell options -->
-                    <span class="label">border-width:</span> <input id="cell_border_width_check" type="checkbox">
-                    1<input id="cell_border_width" type="range" min="1" max="20">20
+                    <span class="label">border-width:</span> 
+                    <!-- <input id="cell_border_width_check" type="checkbox"> -->
+                    1px<input id="cell_border_width" type="range" min="1" max="12">12px
 
                 </div>
 
@@ -187,7 +193,8 @@
     </div> <!-- /Cell Family -->
 
 
-
+        <button onclick="print_me()">Want to copy and paste this doodle?</button>
+        <div id="print_me"></div>
 
 
     </div>
