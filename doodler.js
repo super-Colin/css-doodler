@@ -24,10 +24,16 @@ function refresh_doodle() {
 
 
     // doodle border stuff
+    let doodle_border_h = document.getElementById('doodle_border_h').value;
+    let doodle_border_s = document.getElementById('doodle_border_s').value;
+    let doodle_border_l = document.getElementById('doodle_border_l').value;
+    let doodle_border_a = document.getElementById('doodle_border_a').value;
+    let doodle_border_color = '';
 
     let doodle_radius_check = document.getElementById('doodle_radius_check').checked;
     let doodle_border_radius = "";
     if (doodle_radius_check === true) {
+        // setting border radius var
         let doodle_radius = document.getElementById('doodle_radius').value;
         doodle_border_radius = 'border-radius:' + doodle_radius + '%;';
     }
@@ -36,6 +42,11 @@ function refresh_doodle() {
     let doodle_border_style_check = document.getElementById('doodle_border_style_check').checked;
     let doodle_border_style = "";
     if (doodle_border_style_check === true) {
+        // setting border color var
+        doodle_border_color = `border-color: hsla(` + doodle_border_h + `, ` + doodle_border_s + `%, ` + doodle_border_l + `%, ` +
+            doodle_border_a + `);`;
+
+
         let e = document.getElementById("doodle_border_style");
         doodle_border_style = e.options[e.selectedIndex].text;
         doodle_border_style = 'border-style:' + doodle_border_style + ';';
@@ -50,6 +61,7 @@ function refresh_doodle() {
         doodle_border_width = 'border-width: ' + width + 'px;';
     }
 
+
     // end doodle border stuff
 
 
@@ -57,6 +69,12 @@ function refresh_doodle() {
 
 
     // cell border stuff
+
+    let cell_border_h = document.getElementById('cell_border_h').value;
+    let cell_border_s = document.getElementById('cell_border_s').value;
+    let cell_border_l = document.getElementById('cell_border_l').value;
+    let cell_border_a = document.getElementById('cell_border_a').value;
+    let cell_border_color = '';
 
     let cell_radius_check = document.getElementById('cell_radius_check').checked;
     let cell_border_radius = "";
@@ -71,11 +89,15 @@ function refresh_doodle() {
     let cell_border_check = document.getElementById('cell_border_check').checked;
     if (cell_border_check === true) {
 
+        // setting border color var
+        cell_border_color = `border-color: hsla(` + cell_border_h + `, ` + cell_border_s + `%, ` + cell_border_l + `%, ` + cell_border_a + `);`;
+
+        // setting border style var
         let e = document.getElementById("cell_border_style");
         cell_border_style = e.options[e.selectedIndex].text;
         cell_border_style = 'border-style:' + cell_border_style + ';';
-        console.log('worked');
 
+        // setting border width var
         let width = document.getElementById('cell_border_width').value;
         cell_border_width = 'border-width: ' + width + 'px;';
 
@@ -103,14 +125,17 @@ function refresh_doodle() {
             ` + doodle_border_radius + `
             ` + doodle_border_style + `
             ` + doodle_border_width + `
-            border-color: red;
+            ` + doodle_border_color + `
             overflow:hidden;
         }
         --hue: calc( 100 + 1 * @row() * @col());
+
         ` + cell_center + `
         ` + cell_border_radius + `
         ` + cell_border_style + `
         ` + cell_border_width + `
+        ` + cell_border_color + `
+
 
 
         background-color: hsla(var(--hue), 50%, 70%, @rand(0, 90%));
@@ -127,4 +152,3 @@ function print_me() {
     let div = document.getElementById('print_me');
     div.innerHTML = doodle_input;
 }
-

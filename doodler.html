@@ -85,14 +85,12 @@
                 <!-- doodle border stuff -->
 
                 <div class="bg">
-                    <!-- doodle options -->
                     <span class="label">border-radius:</span> <input id="doodle_radius_check" type="checkbox">
                     1<input id="doodle_radius" type="range" min="1" max="100">100
 
                 </div>
 
                 <div class="bg">
-                    <!-- doodle options -->
                     <span class="label">border-style:</span> <input id="doodle_border_style_check" type="checkbox">
                     <select id="doodle_border_style">
                         <option value="solid">solid</option>
@@ -104,10 +102,25 @@
                 </div>
 
                 <div class="bg">
-                    <!-- doodle options -->
                     <span class="label">border-width:</span> <input id="doodle_border_width_check" type="checkbox">
                     1<input id="doodle_border_width" type="range" min="1" max="20">20
 
+                </div>
+
+                <span class="title">Border Color:</span>
+
+                <div class="bg">
+                    <span class="label">H:</span> 1<input id="doodle_border_h" type="range" min="1" max="360">360
+                </div>
+                <div class="bg">
+                    <span class="label">S:</span> 1<input id="doodle_border_s" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                    <span class="label">L:</span> 1<input id="doodle_border_l" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                    <span class="label">A:</span> 1<input id="doodle_border_a" type="range" min="0" max="1"
+                        step=".05">100
                 </div>
 
                 <!--/ doodle border stuff -->
@@ -160,7 +173,7 @@
 
                 <div class="bg">
                     <!-- cell options -->
-                    <span class="label">border-style:</span> 
+                    <span class="label">border-style:</span>
                     <!-- <input id="cell_border_style_check" type="checkbox"> -->
                     <select id="cell_border_style">
                         <option value="solid">solid</option>
@@ -173,10 +186,25 @@
 
                 <div class="bg">
                     <!-- cell options -->
-                    <span class="label">border-width:</span> 
+                    <span class="label">border-width:</span>
                     <!-- <input id="cell_border_width_check" type="checkbox"> -->
                     1px<input id="cell_border_width" type="range" min="1" max="12">12px
 
+                </div>
+
+                <span class="title">Border Color:</span>
+
+                <div class="bg">
+                    <span class="label">H:</span> 1<input id="cell_border_h" type="range" min="1" max="360">360
+                </div>
+                <div class="bg">
+                    <span class="label">S:</span> 1<input id="cell_border_s" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                    <span class="label">L:</span> 1<input id="cell_border_l" type="range" min="1" max="100">100
+                </div>
+                <div class="bg">
+                    <span class="label">A:</span> 1<input id="cell_border_a" type="range" min="0" max="1" step=".05">100
                 </div>
 
                 <div class="bg">
@@ -184,7 +212,7 @@
                 </div>
                 <!--/ cell border stuff -->
 
- 
+
 
 
             </div>
@@ -193,8 +221,8 @@
     </div> <!-- /Cell Family -->
 
 
-        <button onclick="print_me()">Want to copy and paste this doodle?</button>
-        <div id="print_me"></div>
+    <button onclick="print_me()">Want to copy and paste this doodle?</button>
+    <div id="print_me"></div>
 
 
     </div>
