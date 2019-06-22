@@ -150,6 +150,13 @@
             <div class="bg">
                 <span class="label">H:</span> 1<input id="cell_h" type="range" min="1" max="360">360
             </div>
+            <!-- times index? -->
+            <div class="bg">
+                <span class="label">H x i() or r():</span>
+                <input id="cell_bg_h_index_check" type="checkbox">
+                <input id="cell_bg_h_random_check" type="checkbox">
+            </div>
+
             <div class="bg">
                 <span class="label">S:</span> 1<input id="cell_s" type="range" min="1" max="100">100
             </div>
@@ -157,8 +164,8 @@
                 <span class="label">L:</span> 1<input id="cell_l" type="range" min="1" max="100">100
             </div>
             <div class="bg">
-                    <span class="label">A:</span> 1<input id="cell_a" type="range" min="0" max="1" step=".05">100
-                </div>
+                <span class="label">A:</span> 1<input id="cell_a" type="range" min="0" max="1" step=".05">100
+            </div>
 
             <div class="group half">
                 <span class="title">Other Options:</span>
@@ -199,14 +206,28 @@
                     <span class="label">border-width:</span>
                     <!-- <input id="cell_border_width_check" type="checkbox"> -->
                     1px<input id="cell_border_width" type="range" min="1" max="12">12px
-
                 </div>
+                <!-- times index? -->
+                <div class="bg">
+                    <span class="label">width x index:</span> <input id="cell_border_index_check" type="checkbox">
+                </div>
+
 
                 <span class="title">Border Color:</span>
 
                 <div class="bg">
                     <span class="label">H:</span> 1<input id="cell_border_h" type="range" min="1" max="360">360
                 </div>
+                <!-- times index? -->
+                <div class="bg">
+                    <span class="label">H x i() or r():</span>
+                    <input id="cell_border_h_index_check" type="checkbox">
+                    <input id="cell_border_h_random_check" type="checkbox">
+                </div>
+                <!-- <div class="bg">
+                    <span class="label">H x random:</span> <input id="cell_border_h_random_check" type="checkbox">
+                </div> -->
+
                 <div class="bg">
                     <span class="label">S:</span> 1<input id="cell_border_s" type="range" min="1" max="100">100
                 </div>
@@ -217,9 +238,6 @@
                     <span class="label">A:</span> 1<input id="cell_border_a" type="range" min="0" max="1" step=".05">100
                 </div>
 
-                <div class="bg">
-                    <span class="label">times index #:</span> <input id="cell_border_index_check" type="checkbox">
-                </div>
                 <!--/ cell border stuff -->
 
 

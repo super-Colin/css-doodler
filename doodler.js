@@ -11,14 +11,39 @@ function refresh_doodle() {
     let doodle_s = document.getElementById('doodle_s').value;
     let doodle_l = document.getElementById('doodle_l').value;
     let doodle_a = document.getElementById('doodle_a').value;
-    let doodle_bg_color =`background-color: hsla(` + doodle_h + `, ` + doodle_s + `%, ` + doodle_l + `%, ` + doodle_a + `);`;
-    
+    let doodle_bg_color = `background-color: hsla(` + doodle_h + `, ` + doodle_s + `%, ` + doodle_l + `%, ` + doodle_a + `);`;
 
-    let cell_h = document.getElementById('cell_h').value;
-    let cell_s = document.getElementById('cell_s').value;
-    let cell_l = document.getElementById('cell_l').value;
-    let cell_a = document.getElementById('doodle_a').value;
-    let cell_bg_color =`background-color: hsla(` + cell_h + `, ` + cell_s + `%, ` + cell_l + `%, ` + cell_a + `);`;
+
+
+    // 
+    // 
+    // 
+
+
+    // setting cell background color
+    let cell_bg_h = document.getElementById('cell_h').value;
+    let cell_bg_s = document.getElementById('cell_s').value;
+    let cell_bg_l = document.getElementById('cell_l').value;
+    let cell_bg_a = document.getElementById('cell_a').value;
+
+        // setting the actual var
+    // let cell_bg_color = `background-color: hsla(` + cell_bg_h + `, ` + cell_bg_s + `%, ` + cell_bg_l + `%, ` + cell_bg_a + `);`;
+
+    // This is where the @index is checked for and added
+    let cell_bg_h_index_check = document.getElementById('cell_bg_h_index_check').checked;
+    if (cell_bg_h_index_check === true) {
+        let temp = cell_bg_h
+        cell_bg_h = `
+        calc(@i() * ` + cell_bg_h + `)`;
+    }
+
+
+
+    // setting the actual var
+    let cell_bg_color = `background-color: hsla(` + cell_bg_h + `, ` + cell_bg_s + `%, ` + cell_bg_l + `%, ` + cell_bg_a + `);`;
+
+
+
 
     let cell_center = document.getElementById('cell_center').checked;
     if (cell_center === true) {
@@ -26,6 +51,10 @@ function refresh_doodle() {
     } else {
         cell_center = "";
     }
+
+
+
+
 
 
     // doodle border stuff
@@ -67,7 +96,7 @@ function refresh_doodle() {
 
     // end doodle border stuff
 
-    
+
     // ============================
 
 
@@ -79,6 +108,7 @@ function refresh_doodle() {
     let cell_border_a = document.getElementById('cell_border_a').value;
     let cell_border_color = '';
 
+    // if cell border radius
     let cell_radius_check = document.getElementById('cell_radius_check').checked;
     let cell_border_radius = "";
     if (cell_radius_check === true) {
@@ -86,7 +116,7 @@ function refresh_doodle() {
         cell_border_radius = 'border-radius:' + cell_radius + '%;';
     }
 
-
+    //if cell border 
     let cell_border_style = "";
     let cell_border_width = "";
     let cell_border_check = document.getElementById('cell_border_check').checked;
@@ -141,10 +171,9 @@ function refresh_doodle() {
 
 
 
-        background-color: hsla(var(--hue), 50%, 70%, @rand(0, 90%));
-
     `;
-
+    // --hue: calc( 100 + 1 * @row() * @col());
+    // background-color: hsla(var(--hue), 50%, 70%, @rand(0, 90%));
 
     console.log(doodle_input);
 
