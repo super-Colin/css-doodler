@@ -33,7 +33,7 @@
     margin: .5rem 2.5%;
     width:95%;
     display:flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items:center;
     flex-wrap:wrap;
     border-radius: .5rem;
@@ -41,6 +41,10 @@
 input[type="range"]{
     width:70%;
     justify-self: center;
+}
+input[type="checkbox"]{
+    width:1.2rem;
+    height:1.2rem;
 }
 button{
     /* float:right; */
