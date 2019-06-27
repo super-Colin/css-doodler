@@ -145,16 +145,23 @@
     <div class="family">
         <span class="title family-title">Cells:</span>
         <div class="group">
-            <span class="title">Cell BG (in hsl):</span>
+            <span class="title">Cell BG (in hsla):</span>
 
             <div class="bg">
                 <span class="label">H:</span> 1<input id="cell_h" type="range" min="1" max="360">360
             </div>
-            <!-- times index? -->
+            <!-- times index or random? -->
             <div class="bg">
-                <span class="label">H x i() or r():</span>
+                <span class="label">H x index():</span>
                 <input id="cell_bg_h_index_check" type="checkbox">
-                <input id="cell_bg_h_random_check" type="checkbox">
+                <span class="label">H x random():</span>
+                <div>
+                    <input id="cell_bg_h_random_check" type="checkbox">
+                    <span class="label">r(min, max):</span>
+                    1<input id="cell_bg_h_random_min" type="range" min="1" max="10">10<br />
+                    1<input id="cell_bg_h_random_max" type="range" min="1" max="10">10
+                </div>
+
             </div>
 
             <div class="bg">

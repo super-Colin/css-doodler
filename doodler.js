@@ -26,21 +26,28 @@ function refresh_doodle() {
     let cell_bg_l = document.getElementById('cell_l').value;
     let cell_bg_a = document.getElementById('cell_a').value;
 
-        // setting the actual var
-    // let cell_bg_color = `background-color: hsla(` + cell_bg_h + `, ` + cell_bg_s + `%, ` + cell_bg_l + `%, ` + cell_bg_a + `);`;
 
     // This is where the @index is checked for and added
     let cell_bg_h_index_check = document.getElementById('cell_bg_h_index_check').checked;
     if (cell_bg_h_index_check === true) {
-        let temp = cell_bg_h
-        cell_bg_h = `
-        calc(@i() * ` + cell_bg_h + `)`;
+        // let temp = cell_bg_h
+        cell_bg_h = 'calc(@i() * ' + cell_bg_h + ')';
+    }
+
+    // This is where @random is checked for and added
+    let cell_bg_h_random_check = document.getElementById('cell_bg_h_random_check').checked;
+    if (cell_bg_h_random_check === true) {
+        let random_min = document.getElementById('cell_bg_h_random_min').value;
+        let random_max = document.getElementById('cell_bg_h_random_max').value;
+
+        // let temp = cell_bg_h
+        cell_bg_h = 'calc(@r(' + random_min + ', ' + random_max + ') * ' + cell_bg_h + ')';
     }
 
 
 
     // setting the actual var
-    let cell_bg_color = `background-color: hsla(` + cell_bg_h + `, ` + cell_bg_s + `%, ` + cell_bg_l + `%, ` + cell_bg_a + `);`;
+    let cell_bg_color = 'background-color: hsla(' + cell_bg_h + ', ' + cell_bg_s + '%, ' + cell_bg_l + '%, ' + cell_bg_a + ');';
 
 
 
